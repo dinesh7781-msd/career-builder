@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCraft Resume Builder</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.form-section, .preview-section {
+  flex: 1 1 45%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.resume-preview h1 {
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.resume-preview h3 {
+  margin-top: 15px;
+  color: #34495e;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-section">
+      <h2>Build Your Resume</h2>
+      <form id="resumeForm">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Your full name" />
+
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+
+        <label>Phone:</label>
+        <input type="text" id="phone" placeholder="+91-XXXXXXXXXX" />
+
+        <label>Skills:</label>
+        <textarea id="skills" placeholder="e.g., HTML, CSS, JavaScript"></textarea>
+
+        <label>Experience:</label>
+        <textarea id="experience" placeholder="Your work experience"></textarea>
+
+        <label>Education:</label>
+        <textarea id="education" placeholder="Your academic background"></textarea>
+      </form>
+    </div>
+
+    <div class="preview-section">
+      <h2>Live Resume Preview</h2>
+      <div class="resume-preview">
+        <h1 id="previewName">Your Name</h1>
+        <p id="previewEmail">you@example.com</p>
+        <p id="previewPhone">+91-XXXXXXXXXX</p>
+        <h3>Skills</h3>
+        <p id="previewSkills">Your skills will appear here.</p>
+        <h3>Experience</h3>
+        <p id="previewExperience">Your experience will appear here.</p>
+        <h3>Education</h3>
+        <p id="previewEducation">Your education will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById("resumeForm").addEventListener("input", () => {
+  document.getElementById("previewName").textContent = document.getElementById("name").value ;
+  document.getElementById("previewEmail").textContent = document.getElementById("email").value ;
+  document.getElementById("previewPhone").textContent = document.getElementById("phone").value ;
+  document.getElementById("previewSkills").textContent = document.getElementById("skills").value;
+  document.getElementById("previewExperience").textContent = document.getElementById("experience").value ;
+  document.getElementById("previewEducation").textContent = document.getElementById("education").value;
+});</script>
+</body>
+</html>
